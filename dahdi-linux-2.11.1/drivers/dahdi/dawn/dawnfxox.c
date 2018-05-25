@@ -609,7 +609,7 @@ void dma_initial(struct wctdm *wc) {
 		dawn_write(wc, DAWN_DMAWI1, wc->readdma + 8 * 32 -4);	/* Middle (interrupt) */
 		dawn_write(wc, DAWN_DMAWE1, wc->readdma + 8 * 32 * 2 -4);	/* End */
 	}
-	dawn_write(wc, DAWN_INTSTAT, 0xff);//or ff, need try it
+	dawn_write(wc, DAWN_INTSTAT, 0xff);
 }
 
 static inline void __write_8bits(struct wctdm *wc, unsigned char bits)
