@@ -5,7 +5,7 @@ A fully open source FPGA PCIe TDM IP Core that it is designed for compatibility 
 -  2 separated TDM bus, totally supports 64 Dahdi channels (commercial version only)
 -  2 separated DMA engines built-in to support high-density channels without taking much CPU resource (commercial version only)
 
-**For more information, please visit out our website at [www.switchpi.com](http://www.switchpi.com "www.switchpi.com")**
+**For more information, please visit out our website at [www.switchpi.com](https://switchpi.com/2018/05/25/dawn-fpga-2-tdm-ip-cores/ "www.switchpi.com")**
 # Install manual
 **Check out the dawn Dahdi driver**
 `git clone https://github.com/lixinswitchpi/dawn`
