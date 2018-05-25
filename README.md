@@ -4,3 +4,5 @@ A fully open source FPGA PCIe TDM IP Core that it is designed for compatibility 
 2. 2 separated DMA engines built-in (commercial version only)
 3. fully compatible with Asterisk Dahdi channel
 4. open source, therefore you can build your own Asterisk TDM card (2 Dahdi channels with one TDM bus open)
+
+# For more information, please visit out our website at www.switchpi.com
