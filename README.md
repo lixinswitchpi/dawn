@@ -8,14 +8,14 @@ A fully open source FPGA PCIe TDM IP Core that it is designed for compatibility 
 # For more information, please visit out our website at www.switchpi.com
 # Install manual
 # Check out the dawn Dahdi driver
-git clone https://github.com/lixinswitchpi/dawn
+`git clone https://github.com/lixinswitchpi/dawn`
 # Compile the driver
-cd dahdi-tools-2.11.1
-make
-make install
-reboot
+`cd dahdi-tools-2.11.1`
+`make`
+`make install`
+`reboot`
 # Verify the driver is loaded
-dmesg 
+`dmesg` 
 [ 2720.912991] Dawn Version is 0x02
 [ 2720.912998] Dawn Test register is 0xbabababa
 [ 2720.967327] Created Span WCTDM/0/0 (SwitchPi DAWN TDM BUS 0)
@@ -25,8 +25,8 @@ dmesg
 [ 2722.928888] Module 0 TDM BUS 1: Installed -- AUTO FXS
 [ 2722.928917] Found a Wildcard TDM: SwitchPi DAWN (3 modules)
 # Load Asterisk to run test
-dahdi_genconf 
-dahdi_scan 
+`dahdi_genconf` 
+`dahdi_scan` 
 [1]
 active=yes
 alarms=OK
@@ -60,7 +60,7 @@ port=6,FXS
 port=7,none
 port=8,none
 
-dahdi_cfg -vvv
+`dahdi_cfg -vvv`
 DAHDI Tools Version - 2.11.1
 
 DAHDI Version: 2.11.1
@@ -81,8 +81,8 @@ Setting echocan for channel 1 to mg2
 Setting echocan for channel 5 to mg2
 Setting echocan for channel 6 to mg2
 
-asterisk -f 2 > /dev/null &
-asterisk -cvvvvvvvgr
+`asterisk -f 2 > /dev/null &`
+`asterisk -cvvvvvvvgr`
 root@ast1:/usr/src# asterisk -cvvvvvvvvvvgr
 Asterisk 13.15.0, Copyright (C) 1999 - 2014, Digium, Inc. and others.
 Created by Mark Spencer <markster@digium.com>
