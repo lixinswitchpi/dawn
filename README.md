@@ -9,24 +9,43 @@ A fully open source FPGA PCIe TDM IP Core that it is designed for compatibility 
 # Install manual
 **Check out the dawn Dahdi driver**
 `git clone https://github.com/lixinswitchpi/dawn`
+
 **Compile the driver**
+
 `cd dahdi-tools-2.11.1`
+
 `make`
+
 `make install`
+
 `reboot`
+
 **Verify the driver is loaded**
+
 `dmesg`
+
 [ 2720.912991] Dawn Version is 0x02
+
 [ 2720.912998] Dawn Test register is 0xbabababa
+
 [ 2720.967327] Created Span WCTDM/0/0 (SwitchPi DAWN TDM BUS 0)
+
 [ 2720.967335] Created Span WCTDM/0/1 (SwitchPi DAWN TDM BUS 1)
+
 [ 2721.167936] Module 0 TDM BUS 0: Installed -- AUTO FXO (FCC mode)
+
 [ 2722.047676] Module 0 TDM BUS 1: Installed -- AUTO FXS
+
 [ 2722.928888] Module 0 TDM BUS 1: Installed -- AUTO FXS
+
 [ 2722.928917] Found a Wildcard TDM: SwitchPi DAWN (3 modules)
+
 **Load Asterisk to run test**
+
 `dahdi_genconf`
+
 `dahdi_scan`
+
 [1]
 active=yes
 alarms=OK
