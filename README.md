@@ -1,21 +1,21 @@
-# Dawn Opensoure FPGA PCIe TDM IP core
+# DAWN OPENSOURE FPGA PCIE TDM IP CORE
 A fully open source FPGA PCIe TDM IP Core that it is designed for compatibility with Tiger320 chip, but Dawn FPGA TDM IP core also supports
-1. open source, therefore you can build your own Asterisk TDM card (2 Dahdi channels with one TDM bus open), also with a powerful DMA engine
-2. fully compatible with Asterisk Dahdi channel
-3. 2 separated TDM bus, totally supports 64 Dahdi channels (commercial version only)
-4. 2 separated DMA engines built-in to support high-density channels without taking much CPU resource (commercial version only)
+- open source, therefore you can build your own Asterisk TDM card (2 Dahdi channels with one TDM bus open), also with a powerful DMA engine
+-  fully compatible with Asterisk Dahdi channel
+-  2 separated TDM bus, totally supports 64 Dahdi channels (commercial version only)
+-  2 separated DMA engines built-in to support high-density channels without taking much CPU resource (commercial version only)
 
-# For more information, please visit out our website at www.switchpi.com
+**For more information, please visit out our website at [www.switchpi.com](http://www.switchpi.com "www.switchpi.com")**
 # Install manual
-# Check out the dawn Dahdi driver
+**Check out the dawn Dahdi driver**
 `git clone https://github.com/lixinswitchpi/dawn`
-# Compile the driver
+**Compile the driver**
 `cd dahdi-tools-2.11.1`
 `make`
 `make install`
 `reboot`
-# Verify the driver is loaded
-`dmesg` 
+**Verify the driver is loaded**
+`dmesg`
 [ 2720.912991] Dawn Version is 0x02
 [ 2720.912998] Dawn Test register is 0xbabababa
 [ 2720.967327] Created Span WCTDM/0/0 (SwitchPi DAWN TDM BUS 0)
@@ -24,9 +24,9 @@ A fully open source FPGA PCIe TDM IP Core that it is designed for compatibility 
 [ 2722.047676] Module 0 TDM BUS 1: Installed -- AUTO FXS
 [ 2722.928888] Module 0 TDM BUS 1: Installed -- AUTO FXS
 [ 2722.928917] Found a Wildcard TDM: SwitchPi DAWN (3 modules)
-# Load Asterisk to run test
-`dahdi_genconf` 
-`dahdi_scan` 
+**Load Asterisk to run test**
+`dahdi_genconf`
+`dahdi_scan`
 [1]
 active=yes
 alarms=OK
@@ -66,8 +66,6 @@ DAHDI Tools Version - 2.11.1
 DAHDI Version: 2.11.1
 Echo Canceller(s): MG2
 Configuration
-======================
-
 
 Channel map:
 
@@ -90,7 +88,6 @@ Asterisk comes with ABSOLUTELY NO WARRANTY; type 'core show warranty' for detail
 This is free software, with components licensed under the GNU General Public
 License version 2 and other licenses; you are welcome to redistribute it under
 certain conditions. Type 'core show license' for details.
-=========================================================================
 Connected to Asterisk 13.15.0 currently running on ast1 (pid = 2051)
 ast1*CLI> dahdi show ch
 channels  channel   
@@ -101,10 +98,9 @@ SwitchPi DAWN TDM BUS 1                  OK      0      0      0      CAS Unk   
 ast1*CLI> dahdi show chan
 channels  channel   
 ast1*CLI> dahdi show channels 
-   Chan Extension       Context         Language   MOH Interpret        Blocked    In Service Description                     
+   Chan Extension       Context         Language   MOH Interpret        Blocked    In Service Description
  pseudo                 default                    default                         Yes                                        
       1                 from-pstn                  default                         Yes                                        
       5                 from-internal              default                         Yes                                        
       6                 from-internal              default                         Yes                                        
 ast1*CLI> 
-
