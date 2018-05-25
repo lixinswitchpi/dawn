@@ -1,3 +1,28 @@
+/*
+ * SwitchPi DAWN TDM 2FXO+X Interface card Driver for DAHDI Telephony interface.
+ * This driver is based on Digium WCTDM driver and developed to support SwitchPi DAWN 2FX0+X board only,
+ * you can use it by freely, but there is no warranty as it is.
+ * Written by Xin Li <xin.li@switchpi.com>
+ *
+ * Copyright (C) 2017-2018, SwitchPi, Inc.
+ *
+ * All rights reserved.
+ *
+ */
+
+/*
+ * See http://www.asterisk.org for more information about
+ * the Asterisk project. Please do not directly contact
+ * any of the maintainers of this project for assistance;
+ * the project provides a web site, mailing lists and IRC
+ * channels for your use.
+ *
+ * This program is free software, distributed under the terms of
+ * the GNU General Public License Version 2 as published by the
+ * Free Software Foundation. See the LICENSE file included with
+ * this program for more details.
+ */
+
 #include <linux/kernel.h>
 #include <linux/errno.h>
 #include <linux/module.h>
@@ -2843,7 +2868,6 @@ static int __devinit wctdm_init_one(struct pci_dev *pdev, const struct pci_devic
 		for (i = 0; i < TDMBUS; i ++) {
 			pci_free_consistent(pdev, DAHDI_MAX_CHUNKSIZE * 2 * 2 * 32 *4, (void *)dawn_card->wc[i].writechunk, &dawn_card->wc[i].writedma);
 			dawn_card->wc[i].ddev = NULL;
-			wctdm_free_channels(&dawn_card->wc[i]);
 		}
 		if (dawn_card->ddev) {
 			dahdi_unregister_device(dawn_card->ddev);
@@ -2883,7 +2907,6 @@ static void __devexit wctdm_remove_one(struct pci_dev *pdev)
 		/* Immediately free resources */
 		for (i = 0; i < TDMBUS; i ++) {
 			pci_free_consistent(wc->dev, DAHDI_MAX_CHUNKSIZE * 2 * 2 * 32 *4, (void *)wc->wc[i].writechunk, &wc->wc[i].writedma);
-			//wctdm_free_channels(&wc->wc[i]);
 			wc->wc[i].ddev = NULL;
 		}
 		if (wc->ddev) {
@@ -3005,4 +3028,3 @@ MODULE_LICENSE("GPL v2");
 
 module_init(wctdm_init);
 module_exit(wctdm_cleanup);
-
